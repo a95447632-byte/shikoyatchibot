@@ -65,13 +65,13 @@ async def start_handler(msg: Message):
 async def complaint_start(msg: Message, state: FSMContext):
     await state.set_state(Form.complaint)
     await state.update_data(messages=[], type="complaint")
-    await msg.answer("Shikoyatingizni yuboring:", reply_markup=send_btn)
+    await msg.answer("Shikoyatingizni yuboring:(rasm,matn,video,ovozli habar)", reply_markup=send_btn)
 
 @dp.message(F.text == "💡 Taklif")
 async def suggestion_start(msg: Message, state: FSMContext):
     await state.set_state(Form.suggestion)
     await state.update_data(messages=[], type="suggestion")
-    await msg.answer("Taklifingizni yuboring:", reply_markup=send_btn)
+    await msg.answer("Taklifingizni yuboring:(rasm,matn,video,ovozli habar)", reply_markup=send_btn)
 
 # ===== YUBORISH =====
 @dp.message(F.text == "📤 Yuborish")
